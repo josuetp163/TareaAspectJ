@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author josue
- *
- */
-module Observer {
-}
