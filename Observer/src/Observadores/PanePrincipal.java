@@ -18,7 +18,7 @@ public class PanePrincipal extends StackPane implements Observer{
 	public void update(Observable arg0, Object arg1) {
 		cambiarColor((Color) arg1);
 	}
-	
+
 	public void cambiarColor(Color c) {
 		this.color = c;
 		setBackground(new Background(new BackgroundFill(c, CornerRadii.EMPTY, Insets.EMPTY)));
