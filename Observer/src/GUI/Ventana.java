@@ -53,7 +53,7 @@ public class Ventana extends Observable {
     private void ButtonPressed(String colorNuevo) {
         this.color=colorNuevo;
         setChanged();
-        notifyObservers(color);
+        notifyObservers(color);                     //notify
         System.out.println(obs.getLayoutColor());
         root.setStyle(obs.toString());
     }
