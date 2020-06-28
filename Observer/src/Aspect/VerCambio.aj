@@ -4,12 +4,12 @@ import Observadores.PanePrincipal;
 import javafx.scene.paint.Color;
 
 public aspect VerCambio {
-    Color color;
+    String color;
     pointcut aviso() : call(* PanePrincipal.cambiarColor*(..) );
     
     after(): aviso(){
     	color = PanePrincipal.getColor();
-    	System.out.println("*****El background ha sido cambiado a "+color+"*****");
+    	System.out.println("*****The brackground color has changed to "+color.toLowerCase()+"*****");
     }
 
 }
