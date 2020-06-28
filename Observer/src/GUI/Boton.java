@@ -3,16 +3,19 @@ package GUI;
 import javafx.scene.control.Button;
 import java.util.Observable;
 
+import Observadores.PanePrincipal;
+
 public class Boton extends Observable {
     private Button btn;
     private String color="";
 
 
     //Constructor
-    public Boton(String clr) {
+    public Boton(String clr,PanePrincipal pane) {
     	//Instancia los botones
     	btn = new Button(clr);
-        color = clr;           
+        color = clr;
+        this.addObserver(pane);
         
         //Establece el metodo al clickear los botones
         btn.setOnAction(e->btnClicked());
