@@ -14,13 +14,15 @@ public class PanePrincipal extends StackPane implements Observer{
 
 	private Color color;
 	
+	// Método llamado cuando los observados notifican al observador
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		cambiarColor((Color) arg1);
+		cambiarColor((String) arg1);
 	}
 
-	public void cambiarColor(Color c) {
-		this.color = c;
-		setBackground(new Background(new BackgroundFill(c, CornerRadii.EMPTY, Insets.EMPTY)));
+	// Método encargado de cambiar el color del Pane
+	private void cambiarColor(String color) {
+		this.color = Color.valueOf(color);
+		setBackground(new Background(new BackgroundFill(this.color, CornerRadii.EMPTY, Insets.EMPTY)));
 	}
 }
