@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 
 public class PanePrincipal extends StackPane implements Observer{
 
-	private Color color;
+	private static Color color;
 	
 	// Método llamado cuando los observados notifican al observador
 	@Override
@@ -24,5 +24,9 @@ public class PanePrincipal extends StackPane implements Observer{
 	private void cambiarColor(String color) {
 		this.color = Color.valueOf(color);
 		setBackground(new Background(new BackgroundFill(this.color, CornerRadii.EMPTY, Insets.EMPTY)));
+	}
+	
+	public static Color getColor() {
+		return color;
 	}
 }

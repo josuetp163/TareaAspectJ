@@ -12,4 +12,8 @@ public class Main extends Application{
         stage.setScene(nuevaVentana.getScene());
         stage.show();
     }
+    
+    public static void main(String[] args) {
+    	launch(args);
+    }
 }

@@ -36,9 +36,9 @@ public class Ventana {
     // Método encargado de crear los botones y colocarlos en un HBox
     private void crearBotones() {
     	botones = new HBox();
-    	Boton bt1 = new Boton("blue");
-    	Boton bt2 = new Boton("yellow");
-    	Boton bt3 = new Boton("green");
+    	Boton bt1 = new Boton("blue",pp);
+    	Boton bt2 = new Boton("yellow",pp);
+    	Boton bt3 = new Boton("green",pp);
     	botones.getChildren().addAll(bt1.getButton(),bt2.getButton(),bt3.getButton());
     }
     

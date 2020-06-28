@@ -1,5 +1,6 @@
 package Aspect;
 
+import Observadores.PanePrincipal;
 import javafx.scene.paint.Color;
 
 public aspect VerCambio {
@@ -7,7 +8,7 @@ public aspect VerCambio {
     pointcut aviso() : call(* PanePrincipal.cambiarColor*(..) );
     
     after(): aviso(){
-    	color = PanePrincipal.color();
+    	color = PanePrincipal.getColor();
     	System.out.println("*****El background ha sido cambiado a "+color+"*****");
     }
 
