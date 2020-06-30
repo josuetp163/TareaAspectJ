@@ -27,8 +27,9 @@ public class Ventana {
     
     //Constructor
     public Ventana(Stage stage) {
-    	crearEstrucutraBotones();
+    	crearEstructuraBotones();
         crearEstructura(stage);
+        mostrarVentanaBotones();
         stage.setTitle("Aspectos");
         stage.setScene(scene);
         stage.show();
@@ -37,7 +38,7 @@ public class Ventana {
     //Crea la escena, la ventana y los agrega junto con los botones
     private void crearEstructura(Stage stage) {
         root = new BorderPane();
-        mostrarVentanaBotones();
+        btn = new Button("Nuevo Botón");
         crearPanePrincipal();
         crearBotones();
         root.setCenter(pp);
@@ -66,9 +67,10 @@ public class Ventana {
     }
     
     // Funcionalidad Nueva: Añadir nuevos botones
-    private void crearEstrucutraBotones() {
+    private void crearEstructuraBotones() {
     	crearVentanaBotones();
     	sceneBotones = new Scene(rootBotones, 250, 250);
+    	stageBotones = new Stage();
     	stageBotones.setScene(sceneBotones);
     }
     
@@ -101,8 +103,7 @@ public class Ventana {
     }
     
     private void mostrarVentanaBotones() {
-    	btn = new Button("Nuevo Botón");
-    	btn.setOnAction(e -> {
+    	this.btn.setOnAction(e -> {
     		stageBotones.show();
     		stageBotones.setAlwaysOnTop(true);
     		stageBotones.centerOnScreen();
