@@ -66,10 +66,15 @@ public class Ventana {
     }
     
     // Funcionalidad Nueva: Añadir nuevos botones
-    private void crearEstrucutraBotones() {
+    private void crearEstrucutraBotones(){
     	crearVentanaBotones();
     	sceneBotones = new Scene(rootBotones, 250, 250);
-    	stageBotones.setScene(sceneBotones);
+    	try {
+    		stageBotones.setScene(sceneBotones);
+    	}catch(NullPointerException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	
     }
     
     private void agregarBotones(String color) {
@@ -87,7 +92,6 @@ public class Ventana {
 				Color c = Color.valueOf(color);
 				if (c != null) {
 					agregarBotones(color);
-					stageBotones.close();
 				}
 				else {
 					txt.setText("Ingrese un color válido");
