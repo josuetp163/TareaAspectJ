@@ -3,6 +3,7 @@ package GUI;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
@@ -65,6 +66,7 @@ public class Ventana {
     private void crearPanePrincipal() {
     	pp = new PanePrincipal();
     }
+
     
     public Scene getScene() {
         return scene;
