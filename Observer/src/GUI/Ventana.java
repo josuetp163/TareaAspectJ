@@ -1,5 +1,6 @@
 package GUI;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -44,6 +45,7 @@ public class Ventana {
         root.setCenter(pp);
         root.setBottom(botones);
         root.setRight(btn);
+        root.setPadding(new Insets(10));
         scene = new Scene(root,600,600);
         stage.setScene(scene);
     }
@@ -51,6 +53,8 @@ public class Ventana {
     // Método encargado de crear los botones y colocarlos en un HBox
     private void crearBotones() {
     	botones = new FlowPane();
+    	botones.setPadding(new Insets(10));
+    	botones.setHgap(10.0);
     	Boton bt1 = new Boton("blue",pp);
     	Boton bt2 = new Boton("yellow",pp);
     	Boton bt3 = new Boton("green",pp);
@@ -76,6 +80,7 @@ public class Ventana {
     
     private void agregarBotones(String color) {
     	Boton btn = new Boton(color,pp);
+    	botones.setPadding(new Insets(10));
     	botones.getChildren().addAll(btn.getButton());
     }
     
@@ -101,7 +106,7 @@ public class Ventana {
     	});
     	rootBotones.getChildren().addAll(txt,btn);
     }
-    
+
     private void mostrarVentanaBotones() {
     	this.btn.setOnAction(e -> {
     		stageBotones.show();

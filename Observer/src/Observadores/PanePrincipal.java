@@ -23,7 +23,7 @@ public class PanePrincipal extends StackPane implements Observer{
 	// Método encargado de cambiar el color del Pane
 	private void cambiarColor(String clr) {
 		color = clr;
-		setBackground(new Background(new BackgroundFill(Color.valueOf(color), CornerRadii.EMPTY, Insets.EMPTY)));
+		setBackground(new Background(new BackgroundFill(Color.valueOf(color), CornerRadii.EMPTY,new Insets(10))));
 	}
 	
 	public static String getColor() {
